@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="nb">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Skjermhelse – Tips og sjekkliste</title>
+<meta name="description" content="Interaktiv sjekkliste, pauseøvelser og anbefalt utstyr for skjermarbeid.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,500;9..144,600&family=Hanken+Grotesk:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="wrap nav">
+    <a class="brand" href="index.html">Skjermhelse<span>.</span></a>
+    <button class="nav-toggle" onclick="toggleNav()" aria-label="Meny">☰</button>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="index.html">Hjem</a></li>
+      <li><a href="ergonomi.html">Ergonomi</a></li>
+      <li><a href="helse.html">Helse</a></li>
+      <li><a href="lover.html">Lover</a></li>
+      <li><a class="active" href="tips.html">Tips</a></li>
+      <li><a href="kilder.html">Kilder</a></li>
+    </ul>
+  </div>
+</header>
+
+<main>
+  <section class="wrap page-head">
+    <span class="tag reveal d1">Side: Tips og sjekkliste</span>
+    <h1 class="reveal d1">Tips og sjekkliste</h1>
+    <p class="lead reveal d2">Bruk den interaktive sjekklisten til å gå gjennom din egen arbeidsplass, og legg inn et par enkle pauseøvelser i hverdagen. Avkrysningene huskes på din egen enhet til neste gang.</p>
+  </section>
+
+  <!-- INTERAKTIV SJEKKLISTE -->
+  <section class="wrap section--tight">
+    <p class="eyebrow reveal d1">Interaktiv sjekkliste – din arbeidsplass</p>
+    <div class="checklist reveal d2">
+      <div class="progress-label" id="progressLabel">0 av 5 fullført</div>
+      <div class="progress"><i id="progressBar"></i></div>
+      <div id="checklist">
+        <div class="item" data-id="skjerm"><span class="box">✓</span><span class="label">Er skjermen i øyenhøyde?</span></div>
+        <div class="item" data-id="avstand"><span class="box">✓</span><span class="label">Har du minst 50 cm avstand til skjermen?</span></div>
+        <div class="item" data-id="fotter"><span class="box">✓</span><span class="label">Står føttene flatt på gulvet?</span></div>
+        <div class="item" data-id="pause"><span class="box">✓</span><span class="label">Tar du pause hvert 30. minutt?</span></div>
+        <div class="item" data-id="lys"><span class="box">✓</span><span class="label">Er belysningen god – ingen gjenskinn?</span></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PAUSEØVELSER (flyttet til Helse) -->
+  <section class="wrap section--tight">
+    <p class="eyebrow reveal d1">Pauseøvelser</p>
+    <p class="reveal d2" style="color:var(--muted);max-width:60ch;">Fem enkle øvelser mot belastningsskader – med bilder og en kort video – finner du samlet på <a href="helse.html#ovelser">Helse-siden</a>.</p>
+  </section>
+
+  <!-- ANBEFALT UTSTYR -->
+  <section class="wrap section--tight">
+    <p class="eyebrow reveal d1">Anbefalt utstyr</p>
+    <div class="gear reveal d2">
+      <div class="g"><span class="ico">🖱️</span><div><strong>Ergonomisk mus</strong><span>Avlaster håndledd og underarm – vurder vertikal mus ved smerter.</span></div></div>
+      <div class="g"><span class="ico">🖥️</span><div><strong>Skjermarm</strong><span>Gjør det enkelt å justere skjermen til riktig høyde og vinkel.</span></div></div>
+      <div class="g"><span class="ico">🪑</span><div><strong>Hev-/senkbart bord</strong><span>Lar deg veksle mellom å sitte og stå gjennom dagen.</span></div></div>
+      <div class="g"><span class="ico">✋</span><div><strong>Håndleddstøtte</strong><span>Holder håndleddene i nøytral stilling foran tastaturet.</span></div></div>
+    </div>
+  </section>
+
+  <!-- LAST NED -->
+  <section class="wrap section--tight">
+    <div class="download reveal d2 no-print">
+      <h3>Last ned sjekklisten</h3>
+      <p style="color:var(--muted);">Ta med deg sjekklisten på papir – trykk på knappen og velg «Lagre som PDF».</p>
+      <button class="btn btn-primary" onclick="lastNedSjekkliste()">⬇ Last ned PDF</button>
+    </div>
+  </section>
+
+  <!-- Utskriftsvennlig versjon (vises kun ved utskrift) -->
+  <section class="wrap print-only">
+    <h2>Sjekkliste – din arbeidsplass ved dataskjerm</h2>
+    <ul>
+      <li>☐ Er skjermen i øyenhøyde?</li>
+      <li>☐ Har du minst 50 cm avstand til skjermen?</li>
+      <li>☐ Står føttene flatt på gulvet?</li>
+      <li>☐ Tar du pause hvert 30. minutt?</li>
+      <li>☐ Er belysningen god – ingen gjenskinn?</li>
+    </ul>
+    <p>Pauseøvelser: nakke · skuldre · håndledd. Hvil øynene med 20–20–20-regelen.</p>
+  </section>
+</main>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <div class="footer-grid">
+      <div>
+        <div class="fbrand">Skjermhelse<span>.</span></div>
+        <p>Praktisk HMS-veiledning for arbeid ved dataskjerm. Laget som skoleprosjekt med fokus på utviklere og kontoransatte.</p>
+      </div>
+      <div>
+        <h4>Om siden</h4>
+        <a href="index.html">Hjem</a>
+        <a href="helse.html">Risiko for helseplager</a>
+        <a href="ergonomi.html">Ergonomi</a>
+        <a href="lover.html">Lover og regler</a>
+        <a href="kilder.html">Kilder og bilder</a>
+      </div>
+      <div>
+        <h4>Videre fordypning</h4>
+        <a href="https://www.arbeidstilsynet.no/arbeidsmiljo/ergonomi/arbeid-ved-dataskjerm/" target="_blank" rel="noopener">Arbeidstilsynet</a>
+        <a href="https://lovdata.no/lov/2005-06-17-62" target="_blank" rel="noopener">Lovdata – arbeidsmiljøloven</a>
+        <a href="https://stami.no/" target="_blank" rel="noopener">STAMI</a>
+      </div>
+      <div>
+        <h4>Følg oss</h4>
+        <a href="#" rel="noopener">Sosiale medier</a>
+        <a href="#">Kontakt</a>
+      </div>
+    </div>
+    <div class="footer-bottom">© 2025 Skjermhelse – Håkon Heien Torgersen. Kilder: Arbeidstilsynet og Lovdata.</div>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
